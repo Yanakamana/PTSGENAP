@@ -38,8 +38,8 @@
       let elemenDaftar = $("#daftar-produk > tbody");
       let daftarProduk = await ambilDaftarProduk();
       let nomor = 1;
-     
-     daftarProduk.forEach((data) => {
+      
+      daftarProduk.forEach((data) => {
         elemenDaftar.append(
           '<li class="list-group-item d-flex justify-content-between">' +
           '<label>' +
@@ -55,7 +55,14 @@
           '</div>' +
           '</li>'
         );
+        
+        nomor = + 1;
       });
+      
+    
+          
+      
+     
       daftarProduk.forEach((data) => {
         elemenDaftar.append(
           '<tr>' +
@@ -64,13 +71,17 @@
           '<td>' + formatAngka( data.harga) + '</td>' +
           '<td>' + data.stok + '</td>' +
           '</tr>'
+
         );
+        
+
         nomor = nomor + 1;
       });
       
       $('#loader').hide();
       
     });
+     
   </script>
 </body>
 
