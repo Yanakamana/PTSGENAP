@@ -39,6 +39,23 @@
       let daftarProduk = await ambilDaftarProduk();
       let nomor = 1;
      
+     daftarProduk.forEach((data) => {
+        elemenDaftar.append(
+          '<li class="list-group-item d-flex justify-content-between">' +
+          '<label>' +
+          data.nama +
+          '</label>' +
+          '<div>' +
+          '<a href="#" class="me-2 link-ubah" data="' +
+          data.id +
+          '">Ubah</a>' +
+          ' <button class="btn btn-danger tombol-hapus" data="' +
+          data.id +
+          '">Hapus</button>' +
+          '</div>' +
+          '</li>'
+        );
+      });
       daftarProduk.forEach((data) => {
         elemenDaftar.append(
           '<tr>' +
