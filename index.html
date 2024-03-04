@@ -14,13 +14,13 @@
 <body>
   <h1>Daftar Pembeli</h1>
   
-  <table class="table" id="daftar-produk">
+  <table class="table" id="daftar-Pembeli">
     <thead>
       <tr>
         <th scope="col">#</th>
-        <th scope="col">Nama pembeli</th>
+        <th scope="col">Nama Pembeli</th>
         <th scope="col">alamat</th>
-        <th scope="col">NO.Tlpn</th>
+        <th scope="col">telpon</th>
       </tr>
     </thead>
     <tbody>
@@ -29,14 +29,14 @@
   
   <img src="loader.gif" style="width: 1.8em; display: block" id="loader">
 
-<a href="form-peroduk.html">Tambah produk</a>
+<a href="form-peroduk.html">Tambah Pembeli</a>
   
   <script type="module">
     import { ambilDaftarProduk, formatAngka } from './main.js';
     
     $(document).ready(async function() {
       let elemenDaftar = $("#daftar-produk > tbody");
-      let daftarProduk = await ambilDaftarProduk();
+      let daftarProduk = await ambilDaftarPembeli();
       let nomor = 1;
       
       daftarProduk.forEach((data) => {
@@ -44,8 +44,8 @@
           '<tr>' +
           '<th>' + nomor + '</th>' +
           '<td>' + data.nama + '</td>' +
-          '<td>' + formatAngka( data.harga) + '</td>' +
-          '<td>' + data.stok + '</td>' +
+          '<td>' + formatAngka( data.alamat) + '</td>' +
+          '<td>' + data.telpon + '</td>' +
           '</tr>'
         );
         nomor = nomor + 1;
