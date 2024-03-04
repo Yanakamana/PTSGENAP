@@ -29,17 +29,17 @@
   
   <img src="loader.gif" style="width: 1.8em; display: block" id="loader">
 
-<a href="form-peroduk.html">Tambah Pembeli</a>
+<a href="form-Pembeli.html">Tambah Pembeli</a>
   
   <script type="module">
-    import { ambilDaftarProduk, formatAngka } from './main.js';
+    import { ambilDaftarPembeli, formatAngka } from './main.js';
     
     $(document).ready(async function() {
-      let elemenDaftar = $("#daftar-produk > tbody");
-      let daftarProduk = await ambilDaftarPembeli();
+      let elemenDaftar = $("#daftar-pembeli > tbody");
+      let daftarPembeli = await ambilDaftarPembeli();
       let nomor = 1;
       
-      daftarProduk.forEach((data) => {
+      daftarPembeli.forEach((data) => {
         elemenDaftar.append(
           '<tr>' +
           '<th>' + nomor + '</th>' +
