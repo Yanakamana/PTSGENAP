@@ -38,39 +38,22 @@
       let elemenDaftar = $("#daftar-produk > tbody");
       let daftarProduk = await ambilDaftarProduk();
       let nomor = 1;
-      
-      daftarProduk.forEach((data) => {
-        elemenDaftar.append(
-          '<li class="list-group-item d-flex justify-content-between">' +
-          '<label>' +
-          data.nama +
-          '</label>' +
-          '<div>' +
-          '<a href="#" class="me-2 link-ubah" data="' +
-          data.id +
-          '">Ubah</a>' +
-          ' <button class="btn btn-danger tombol-hapus" data="' +
-          data.id +
-          '">Hapus</button>' +
-          '</div>' +
-          '</li>'
-        );
-        
-        nomor = + 1;
-      });
     
       daftarProduk.forEach((data) => {
         elemenDaftar.append(
           '<tr>' +
           '<th>' + nomor + '</th>' +
           '<td>' + data.nama + '</td>' +
-          '<td>' + formatAngka( data.harga) + '</td>' +
-          '<td>' + data.stok + '</td>' +
+          '<td>' + data.alamat + '</td>' +
+          '<td>' + data.noTlpn + '</td>' + '<td class="stack-up">' +
+          ' <a href="#" class="me-2 link-ubah"  data="' +
+          data.id +
+          '">ubah</a> ' +
+          ' <button class="btn btn-danger tombol-hapus" data="' +
+          data.id +
+          '">Hapus</button>' + '</td>' +
           '</tr>'
-
         );
-        
-
         nomor = nomor + 1;
       });
       
