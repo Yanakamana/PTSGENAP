@@ -32,7 +32,7 @@
 <a href="form-peroduk.html">Tambah data pembeli</a>
   
   <script type="module">
-    import { ambilDaftarProduk, formatAngka } from './main.js';
+    import { ambilDaftarProduk, formatAngka, hapusProduk } from './main.js';
     
     $(document).ready(async function() {
       let elemenDaftar = $("#daftar-produk > tbody");
@@ -57,6 +57,15 @@
         nomor = nomor + 1;
       });
       
+$('.tombol-hapus').click(async function() {
+        await hapusProduk($(this).attr('data'));
+        location.reload();
+      })
+
+      $('.link-ubah').click(async function() {
+        window.location.replace('ubah-produk.html?docId=' + $(this).attr('data'));
+      })
+
       $('#loader').hide();
       
     });
