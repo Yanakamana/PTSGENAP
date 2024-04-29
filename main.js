@@ -68,7 +68,13 @@ export async function hapusProduk(docId) {
 export async function ubahProduk(docId, nama, alamat, noTlpn) {
   await updateDoc(doc(db, "produk", docId), {
     nama: nama,
-    alamat: alamat,
-    noTlpn: noTlpn
+    harga: harga,
+    setok: setok
   });
+}
+export async function ambilProduk(docId) {
+  const docRef = await doc(db, "produk", docId);
+  const docSnap = await getDoc(docRef);
+
+  return await docSnap.data();
 }
