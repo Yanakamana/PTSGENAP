@@ -64,3 +64,11 @@ export async function  tambahProduk(nama, harga, stok) {
 export async function hapusProduk(docId) {
   await deleteDoc(doc(db, "produk", docId));
 } 
+
+export async function ubahPembeli(docId, nama, alamat, noTlpn) {
+  await updateDoc(doc(db, "pembeli", docId), {
+    nama: nama,
+    alamat: alamat,
+    noTlpn: noTlpn
+  });
+}
