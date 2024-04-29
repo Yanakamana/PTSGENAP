@@ -65,8 +65,8 @@ export async function hapusProduk(docId) {
   await deleteDoc(doc(db, "produk", docId));
 } 
 
-export async function ubahPembeli(docId, nama, alamat, noTlpn) {
-  await updateDoc(doc(db, "pembeli", docId), {
+export async function ubahProduk(docId, nama, alamat, noTlpn) {
+  await updateDoc(doc(db, "produk", docId), {
     nama: nama,
     alamat: alamat,
     noTlpn: noTlpn
