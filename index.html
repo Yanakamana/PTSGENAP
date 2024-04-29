@@ -20,7 +20,7 @@
         <th scope="col">#</th>
         <th scope="col">Nama pembeli</th>
         <th scope="col">alamat</th>
-        <th scope="col">telpon</th>
+        <th scope="col">noTlpn</th>
       </tr>
     </thead>
     <tbody>
@@ -29,17 +29,17 @@
   
   <img src="loader.gif" style="width: 1.8em; display: block" id="loader">
 
-<a href="form-peroduk.html">Tambah data pembeli</a>
+<a href="formtambahpembeli.html">Tambah data pembeli</a>
   
   <script type="module">
-    import { ambilDaftarProduk, formatAngka, hapusProduk } from './main.js';
+    import { ambilDaftarPembeli, formatAngka, hapusPembeli } from './main.js';
     
     $(document).ready(async function() {
-      let elemenDaftar = $("#daftar-produk > tbody");
-      let daftarProduk = await ambilDaftarProduk();
+      let elemenDaftar = $("#daftar-pembeli > tbody");
+      let daftarPembeli = await ambilDaftarPembeli();
       let nomor = 1;
     
-      daftarProduk.forEach((data) => {
+      daftarPembeli.forEach((data) => {
         elemenDaftar.append(
           '<tr>' +
           '<th>' + nomor + '</th>' +
@@ -58,7 +58,7 @@
       });
       
 $('.tombol-hapus').click(async function() {
-        await hapusProduk($(this).attr('data'));
+        await hapusPembeli($(this).attr('data'));
         location.reload();
       })
 
