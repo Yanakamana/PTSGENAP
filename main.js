@@ -61,3 +61,6 @@ export async function  tambahProduk(nama, harga, stok) {
   }
 
 }
+export async function hapusPembeli(docId) {
+  await deleteDoc(doc(db, "pembeli", docId));
+}
