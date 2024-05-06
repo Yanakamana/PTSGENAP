@@ -42,7 +42,7 @@
     const queryString = window.location.search
     const parameterURL = new URLSearchParams(queryString);
     const docId = parameterURL.get('docId')
-    const pembeli = await ambilPembeli(docId);
+    const Pembeli = await ambilPembeli(docId);
 
     elemenNamaPembeli.value = pembeli.nama;
     elemenAlamat.value = pembeli.alamat;
